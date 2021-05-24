@@ -15,13 +15,13 @@
 age = int(input('Введите возраст '))
 def main():
   if age<7:
-    print('Только детский сад')
+    return 'Только детский сад'
   elif 7 <= age <18:
-    print('Только школа')
+    return 'Только школа'
   elif 18 <= age < 24:
-    print('Только ВУЗ')
+    return 'Только ВУЗ'
   else:
-    print('Только работа')
+    return 'Только работа'
 
 if __name__ == "__main__":
-    main()
+    print(main())

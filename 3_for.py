@@ -9,25 +9,14 @@
 * Посчитать и вывести средний балл по всей школе.
 * Посчитать и вывести средний балл по каждому классу.
 """
-spisok = [{'school_class_4a': '4a', 'scores': [3, 4, 4, 5, 2]}, {'school_class_5a': '4b', 'scores_1': [4, 5, 5, 3, 4]}]
+list1 = [{'school_class_4a': '4a', 'scores': [3, 4, 4, 5, 2]}, {'school_class_5a': '4b', 'scores': [4, 5, 5, 3, 4]}]
 def main():
-    ratings = 0
-    n = 0
-    for i in spisok[0]['scores']:
-        ratings += i
-        n += 1
-    sr_ball_4a = ratings / len(spisok[0]['scores'])
-    print('Средний балл 4 а класса: ', sr_ball_4a)
-
-    ratings1 = 0
-    n1 = 0
-    for k in spisok[1]['scores_1']:
-        ratings1 += k
-        n1 += 1
-    sr_ball_4b = ratings1 / len(spisok[1]['scores_1'])
-    print('Средний балл 4 b класса: ', sr_ball_4b)
-
-    summ = (ratings + ratings1) / (n + n1)
-    print('Средний балл школы: ', summ)
+    average_score = []  # Средний баллы: 4а, 4б.
+    for i in list1:
+        score = i['scores']
+        result = average_score.append((sum(score)) / len(score))
+    print('Средний балл 4 а класса: ', average_score[0])
+    print('Средний балл 4 b класса: ', average_score[1])
+    print('Средний балл школы: ', sum(average_score) / len(average_score))
 if __name__ == "__main__":
     main()

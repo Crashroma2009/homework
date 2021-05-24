@@ -15,6 +15,7 @@
 import logging
 import ephem
 from datetime import  datetime
+import KeyBot
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -32,7 +33,7 @@ PROXY = {
 }
 
 
-def greet_user(update, context):
+def greet_user(update, context):     #
     text = 'Вызван /start'
     print(text)
     update.message.reply_text(text)
@@ -45,18 +46,17 @@ def talk_to_me(update, context):
 
 def space(update, context):
     date = datetime.today().date()
-    user_text = update.message.text
-    s = user_text.split()
-    s1 = s[1]
-    pluton = getattr(ephem, s1)(date)
-    constellation = ephem.constellation(pluton)
+    user_text = update.message.text.split()
+    s1 = user_text[1]
+    planet_name = getattr(ephem, s1)(date)
+    constellation = ephem.constellation(planet_name)
     update.message.reply_text(constellation)
 
 
 
 
 def main():
-    mybot = Updater("1851936710:AAGwiPLETcFRwQo50sxQBa51chpi-OR_OA8", request_kwargs=PROXY, use_context=True)
+    mybot = Updater(KeyBot.key, request_kwargs=PROXY, use_context=True)
 
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))

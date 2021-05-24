@@ -21,7 +21,7 @@ def ask_user(answers_dict):
   if answers_dict in questions_and_answers:
     print(questions_and_answers[answers_dict])
   else:
-    answers_dict = input('Задайте вопрос ')
+    input('Задайте вопрос ')
 answers_dict = input('Задайте вопрос ')
 if __name__ == "__main__":
     ask_user(answers_dict)

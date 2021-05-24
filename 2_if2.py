@@ -16,29 +16,21 @@
 """
 
 def main(str1, str2):
-    if str1 != str(str1) and str2 != str(str2):
-         print('0')
+    if isinstance(str1, int) and isinstance(str2, int):
+        return '0'
     elif str1 == str2:
-         print('1')
+         return '1'
     elif str1 != str2 and len(str1) > len(str2):
-         print('2')
+         return '2'
     elif str1 != str2 and str2 == 'learn':
-        print('3')
+        return '3'
     
 if __name__ == "__main__":
     # 1 раз
-  str1 = 'Python'
-  str2 = 'learn'
-  main(str1, str2)
+  print(main('Python', 'learn'))  
   # 2 раз
-  str1 = 'Moscow'
-  str2 = 'Moscow'
-  main(str1, str2)
+  print(main('Moscow', 'Moscow'))  
   # 3 раз
-  str1 = 'prog'
-  str2 = 'learn'
-  main(str1, str2)
+  print(main('prog', 'learn')) 
   # 4 раз
-  str1 = 3
-  str2 = 54
-  main(str1, str2)
+  print(main(3, 54))

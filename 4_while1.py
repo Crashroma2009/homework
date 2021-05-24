@@ -10,10 +10,9 @@
 """
 
 
-def hello_user(vopros):
-  while vopros != otvet:
-    vopros = input('Как дела? ')
-vopros = input('Как дела? ')
-otvet = 'Хорошо'  
+def hello_user(response):
+  while response.lower() != ('Хорошо').lower():
+      response = input('Как дела? ')
+response = input('Как дела? ')
 if __name__ == "__main__":
-    hello_user(vopros)
+    hello_user(response)
