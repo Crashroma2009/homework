@@ -11,7 +11,7 @@
 
 
 def hello_user(response):
-  while response.lower() != ('Хорошо').lower():
+  while response.lower() != 'хорошо':
       response = input('Как дела? ')
 response = input('Как дела? ')
 if __name__ == "__main__":

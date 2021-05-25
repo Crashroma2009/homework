@@ -16,7 +16,7 @@
 """
 
 def main(str1, str2):
-    if isinstance(str1, int) and isinstance(str2, int):
+    if not (isinstance(str1, str) and isinstance(str2, str)):
         return '0'
     elif str1 == str2:
          return '1'
@@ -33,4 +33,4 @@ if __name__ == "__main__":
   # 3 раз
   print(main('prog', 'learn')) 
   # 4 раз
-  print(main(3, 54))
+  print(main(3, 54)
